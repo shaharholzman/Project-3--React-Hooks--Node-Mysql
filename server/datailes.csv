@@ -1,0 +1,41 @@
+# create database MyDB
+
+# create table users (
+id int auto_increment,
+first_name varchar(255) not null,
+Last_Name varchar(255) not null,
+Username varchar(255) not null,
+password varchar (255) not null,
+isAdmin bool default false,
+primary key(id)
+)
+
+# INSERT INTO users (first_name,Last_Name,Username,password)
+VALUES('shahar','holzman','admin','$10$NnYg4uhtK.qUxdiJjZdicODcsdonMt2cwhOVFu6ST28zi3Up0OZFe')
+
+# create table vication (
+vicationID int auto_increment,
+Description varchar(255) not null,
+destination varchar(255) not null,
+Image varchar(255) not null,
+start_date date not null,
+end_date date not null,
+price int not null,
+followers int  DEFAULT 0 not null,
+primary key(vicationID)
+)
+
+לחזור לזה ולהוסיף נתונים
+#INSERT INTO vication (destination,Image,start_date,end_date,price,Description) VALUES
+('Madrid','https://images.pexels.com/photos/2440984/pexels-photo-2440984.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','25/12/2019','30/12/2019',70,'great trip to Madrid')
+('Italy','https://images.pexels.com/photos/531602/pexels-photo-531602.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','27/12/2019','31/12/2019',60,'great trip to Italy')
+('Greece','https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','05/01/2020','08/01/2020',70,'great trip to Greece')
+('Paris','https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTI1MXF-bbxAO-QeaccZscmemng3e8YiGSP341WWU3ioQy5oyg_','15/01/2020','10/02/2020',120,'great trip to Paris')
+('Hong-Kong','https://images.pexels.com/photos/792832/pexels-photo-792832.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','25/01/2020','02/02/2020',85,'great trip to Hong-Kong')
+('Jaipur','https://images.pexels.com/photos/2588193/pexels-photo-2588193.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500','12/02/2020','30/02/2020',50,'great trip to Jaipur')
+
+#create table follow_vication(
+id int,
+vicationID int,
+FOREIGN KEY (vicationID) REFERENCES vication (vicationID)
+)
